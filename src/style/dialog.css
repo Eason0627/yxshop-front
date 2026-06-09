@@ -1,0 +1,113 @@
+.dialog {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 100;
+}
+
+.dialog .dialog-mask {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 99;
+}
+
+.dialog .dialog-content {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 500px;
+  height: 120px;
+  padding: 16px;
+  border-radius: 3px;
+  background: #fff;
+  transform: translateX(-50%);
+  z-index: 100;
+  box-sizing: content-box;
+  box-shadow: 0 3px 8px var(--boxShadow-color);
+}
+
+.dialog .dialog-head {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 30px;
+}
+
+.dialog-head .dialog-title {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+}
+
+.dialog-head .dialog-title .icon {
+  margin-right: 10px;
+}
+
+.dialog .dialog-head .dialog-close {
+  margin-top: -10px;
+}
+
+.dialog .dialog-head .dialog-close span {
+  margin-top: -10px;
+  font-size: 24px !important;
+  color: var(--info-color);
+  cursor: pointer;
+}
+
+.dialog .dialog-message {
+  width: 100%;
+  min-height: 50px;
+  padding: 0 15px;
+  text-align: left;
+  font-size: 14px;
+  color: var(--info-color);
+  word-break: break-all;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.dialog .dialog-buttons {
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  height: 30px;
+}
+
+.dialog .dialog-buttons button {
+  padding: 0 20px;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.4s;
+}
+
+.dialog .dialog-buttons button.cancel {
+  margin-right: 15px;
+  color: var(--info-color);
+  border: 1px solid var(--info-color);
+}
+.dialog .dialog-buttons button.cancel:hover {
+  border-color: var(--primary-border-color);
+  color: var(--primary-color);
+  background: var(--primary-bg-color);
+}
+
+.dialog .dialog-buttons button.confirm {
+  color: #fff;
+  border: 1px solid var(--primary-border-color);
+  background: var(--primary-color);
+}
+
+.dialog .dialog-buttons button.confirm:hover {
+  background: var(--primary-bg-hover-color);
+}

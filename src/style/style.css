@@ -1,0 +1,314 @@
+:root {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* ===== React App 主题色 ===== */
+  --primary: #FF6B00;
+  --primary-hover: #FF8A3D;
+  --primary-light: #FFF4E6;
+  --primary-gradient: linear-gradient(135deg, #FF6B00 0%, #FF8A3D 100%);
+
+  --success: #00B96B;
+  --success-light: #E8FAF2;
+  --warning: #FAAD14;
+  --warning-light: #FFFBE6;
+  --danger: #FF4D4F;
+  --danger-light: #FFF1F0;
+  --info: #165DFF;
+  --info-light: #EEF3FF;
+
+  /* ===== 文字 ===== */
+  --text-primary: #1A1A1A;
+  --text-regular: #333333;
+  --text-secondary: #666666;
+  --text-tertiary: #999999;
+  --text-placeholder: #C0C0C0;
+  --text-inverse: #FFFFFF;
+
+  /* ===== 背景 ===== */
+  --bg-page: #F7F8FA;
+  --bg-white: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-input: #F7F8FA;
+  --bg-hover: #F5F5F5;
+  --bg-sidebar: #FFFFFF;
+
+  /* ===== 边框 ===== */
+  --border-color: #F0F0F0;
+  --border-light: #F5F5F5;
+
+  /* ===== 阴影 ===== */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.10);
+
+  /* ===== 圆角 ===== */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* ===== 覆盖 Element Plus 主题 ===== */
+  --el-color-primary: #FF6B00;
+  --el-color-primary-light-3: #FF8A3D;
+  --el-color-primary-light-5: #FFB380;
+  --el-color-primary-light-7: #FFD1B3;
+  --el-color-primary-light-8: #FFE8D6;
+  --el-color-primary-light-9: #FFF4E6;
+  --el-color-primary-dark-2: #E05A00;
+  --el-color-success: #00B96B;
+  --el-color-warning: #FAAD14;
+  --el-color-danger: #FF4D4F;
+  --el-color-info: #666666;
+  --el-border-radius-base: 8px;
+  --el-border-radius-small: 6px;
+  --el-border-radius-round: 20px;
+  --el-font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-page);
+  color: var(--text-regular);
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg-page);
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+input, textarea, select {
+  outline: none;
+  font-family: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: inherit;
+}
+
+/* Element Plus 全局覆盖 */
+.el-button--primary {
+  --el-button-bg-color: var(--primary);
+  --el-button-border-color: var(--primary);
+  --el-button-hover-bg-color: var(--primary-hover);
+  --el-button-hover-border-color: var(--primary-hover);
+  --el-button-active-bg-color: #E05A00;
+  --el-button-active-border-color: #E05A00;
+  border-radius: var(--radius-sm) !important;
+  font-weight: 500 !important;
+}
+
+.el-button {
+  border-radius: var(--radius-sm) !important;
+}
+
+.el-input__wrapper {
+  border-radius: var(--radius-sm) !important;
+  box-shadow: 0 0 0 1px var(--border-color) inset !important;
+}
+
+.el-input__wrapper:hover {
+  box-shadow: 0 0 0 1px var(--text-tertiary) inset !important;
+}
+
+.el-input__wrapper.is-focus {
+  box-shadow: 0 0 0 1px var(--primary) inset !important;
+}
+
+.el-select .el-input__wrapper {
+  border-radius: var(--radius-sm) !important;
+}
+
+.el-table {
+  --el-table-border-color: var(--border-light);
+  --el-table-header-bg-color: #FAFAFA;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.el-table th.el-table__cell {
+  background: #FAFAFA;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.el-pagination {
+  --el-pagination-hover-color: var(--primary);
+  font-weight: 400;
+}
+
+/* ── el-dialog 全局修正：居中 + 固定高度 + 内部滚动 ── */
+.el-overlay-dialog {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: hidden !important;   /* 禁止遮罩层自身滚动，彻底消除页面滚动条 */
+}
+
+.el-dialog {
+  margin: 0 !important;          /* 去掉默认 margin-top:15vh */
+  max-height: 90vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
+  border-radius: 8px !important;
+}
+
+.el-dialog__header {
+  flex-shrink: 0;
+  padding: 13px 18px !important;
+  margin-right: 0 !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.el-dialog__headerbtn {
+  top: 11px !important;
+  right: 14px !important;
+  width: 26px !important;
+  height: 26px !important;
+}
+
+.el-dialog__title {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+  line-height: 1.5 !important;
+}
+
+/* body 承担弹窗内部滚动，scrollbar 隐藏 */
+.el-dialog__body {
+  flex: 1 !important;
+  min-height: 0 !important;
+  overflow-y: auto !important;
+  padding: 16px 18px !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.el-dialog__body::-webkit-scrollbar {
+  display: none !important;
+}
+
+.el-dialog__footer {
+  flex-shrink: 0;
+}
+
+.el-dialog__footer {
+  padding: 11px 18px !important;
+  border-top: 1px solid var(--border-color) !important;
+}
+
+/* ── el-drawer 样式修正 ── */
+.el-drawer__header {
+  padding: 13px 18px !important;
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.el-drawer__title {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  color: var(--text-primary) !important;
+}
+
+.el-drawer__body {
+  padding: 16px 18px !important;
+  overflow-y: auto !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.el-drawer__body::-webkit-scrollbar {
+  display: none !important;
+}
+
+/* ── el-message-box ── */
+.el-message-box {
+  border-radius: 8px !important;
+}
+
+.el-message-box__header {
+  padding: 13px 18px !important;
+  border-bottom: 1px solid var(--border-color) !important;
+}
+
+.el-message-box__headerbtn {
+  top: 11px !important;
+  right: 14px !important;
+}
+
+.el-message-box__btns {
+  padding: 10px 18px !important;
+  border-top: 1px solid var(--border-color) !important;
+}
+
+.el-message-box__content {
+  padding: 16px 18px !important;
+}
+
+.el-tag {
+  border-radius: 4px !important;
+  font-weight: 500 !important;
+}
+
+.el-menu {
+  border-right: none !important;
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #DDD;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #CCC;
+}
+
+/* fade-slide 过渡 */
+.fade-slide-enter-active,
+.fade-slide-leave-active {
+  transition: all 0.25s ease;
+}
+.fade-slide-enter-from {
+  opacity: 0;
+  transform: translateX(12px);
+}
+.fade-slide-leave-to {
+  opacity: 0;
+  transform: translateX(-12px);
+}

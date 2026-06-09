@@ -1,0 +1,39 @@
+.popup {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 368px;
+  padding: 3px 16px;
+  font-size: 14px;
+  border-radius: 8px;
+  transform: translateX(-50%);
+  transition: all 0.4s;
+}
+
+.popup.info {
+  color: var(--info-color);
+  background-color: var(--info-bg-color);
+}
+
+.popup.alert {
+  color: var(--warning-color);
+  background-color: var(--warning-bg-color);
+}
+
+.popup.error {
+  color: var(--error-color);
+  background-color: var(--error-bg-color);
+}
+
+.popup.success {
+  color: var(--success-color);
+  background-color: var(--success-bg-color);
+}
+
+.popup .icon {
+  margin-right: 10px;
+}
